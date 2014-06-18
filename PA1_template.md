@@ -5,8 +5,8 @@
         - Load the data (i.e. read.csv())
         
         ```r
-                setwd("c:/users/qs/desktop/coursera")
-                filename<-unzip("./RepData_PeerAssessment1/activity.zip")
+                setwd("c:/users/qs/desktop/coursera/RepData_PeerAssessment1")
+                filename<-unzip("./activity.zip")
                 activity<-read.csv(filename,as.is=TRUE)
         ```
         
