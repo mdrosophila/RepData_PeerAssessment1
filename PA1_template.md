@@ -25,7 +25,7 @@
                 hist(stepsPerDay)
         ```
         
-        ![plot of chunk histogram](figure/histogram.png) 
+        ![plot of chunk histogram1](figure/histogram1.png) 
 
     - Calculate and report the mean and median total number of steps taken per day
         

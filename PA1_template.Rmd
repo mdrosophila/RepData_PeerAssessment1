@@ -17,7 +17,7 @@
 
 ## What is mean total number of steps taken per day?
         - Make a histogram of the total number of steps taken each day
-        ```{r histogram,fig.height=4,inclue=TRUE}
+        ```{r histogram1,fig.height=4,inclue=TRUE}
                 stepsPerDay<-tapply(activity$steps,activity$date,sum,na.rm=TRUE)
                 hist(stepsPerDay)
         ```
