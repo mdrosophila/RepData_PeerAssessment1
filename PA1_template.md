@@ -21,7 +21,7 @@
 
 ```r
         stepsPerDay<-tapply(activity$steps,activity$date,sum,na.rm=TRUE)
-        hist(stepsPerDay,xlab="steps per day",main="")
+        hist(stepsPerDay,xlab="steps per day",main="",breaks=10)
 ```
 
 ![plot of chunk histogram1](figure/histogram1.png) 
@@ -103,7 +103,7 @@
 
 ```r
         stepsPerDayImpute<-tapply(activity$steps,activity$date,sum)
-        hist(stepsPerDayImpute)
+        hist(stepsPerDayImpute,breaks=10)
 ```
 
 ![plot of chunk histogram2](figure/histogram2.png) 
@@ -144,7 +144,7 @@
 **Do these values differ from the estimates from the first part of the assignment?**
 - Yes, these values differs from the first part.
 First,the histogram of imputed data has a distribution closer to normal distribution than the original data with NA removed.
-Second, the mean and medium values are the similar now. 
+Second, the mean and medium values are identical now. 
         
 **What is the impact of imputing missing data on the estimates of the total daily number of steps?**
 - Total daily steps increase 86129.51 by imputating the missing data.
