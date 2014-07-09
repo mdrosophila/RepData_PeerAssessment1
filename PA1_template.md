@@ -69,7 +69,6 @@
 
 
 ## Imputing missing values
-**Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.**
 
 - Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
@@ -81,10 +80,12 @@
 ## [1] 2304
 ```
 - Devise a strategy for filling in all of the missing values in the dataset. 
-1. To replace NA, first calculate the mean for this 5-minute interval excluding the NA number
-2. Replace NA with the mean of this interval.
+
+        1.To replace NA, first calculate the mean for this 5-minute interval excluding the NA number.
+
+        2. Replace NA with the mean of this interval.
         
--Create a new dataset that is equal to the original dataset but with the missing data filled in.
+- Create a new dataset that is equal to the original dataset but with the missing data filled in.
         
 
 ```r
@@ -96,7 +97,7 @@
         }
 ```
 
--Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.                 
+- Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.                 
 
         
 
@@ -141,12 +142,12 @@
 ```
 
 **Do these values differ from the estimates from the first part of the assignment?**
--Yes, these values differs from the first part.
+- Yes, these values differs from the first part.
 First,the histogram of imputed data has a distribution closer to normal distribution than the original data with NA removed.
 Second, the mean and medium values are the similar now. 
         
 **What is the impact of imputing missing data on the estimates of the total daily number of steps?**
--Total daily steps increase 86129.51 by imputating the missing data.
+- Total daily steps increase 86129.51 by imputating the missing data.
 This represents a 15% increase of total daily steps.
         
 

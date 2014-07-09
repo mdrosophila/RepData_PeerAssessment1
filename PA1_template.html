@@ -252,8 +252,6 @@ hljs.initHighlightingOnLoad();
 
 <h2>Imputing missing values</h2>
 
-<p><strong>Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.</strong></p>
-
 <ul>
 <li>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)</li>
 </ul>
@@ -265,12 +263,14 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li>Devise a strategy for filling in all of the missing values in the dataset. </li>
-<li>To replace NA, first calculate the mean for this 5-minute interval excluding the NA number</li>
-<li>Replace NA with the mean of this interval.</li>
-</ul>
+<li><p>Devise a strategy for filling in all of the missing values in the dataset. </p>
 
-<p>-Create a new dataset that is equal to the original dataset but with the missing data filled in.</p>
+<pre><code>1.To replace NA, first calculate the mean for this 5-minute interval excluding the NA number.
+
+2. Replace NA with the mean of this interval.
+</code></pre></li>
+<li><p>Create a new dataset that is equal to the original dataset but with the missing data filled in.</p></li>
+</ul>
 
 <pre><code class="r">        intervalmean&lt;-tapply(activity$steps,activity$interval,function(x) mean(x,na.rm=TRUE))
         for (i in 1:length(activity[,1]))
@@ -280,7 +280,9 @@ hljs.initHighlightingOnLoad();
         }
 </code></pre>
 
-<p>-Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.                 </p>
+<ul>
+<li>Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.<br/></li>
+</ul>
 
 <pre><code class="r">        stepsPerDayImpute&lt;-tapply(activity$steps,activity$date,sum)
         hist(stepsPerDayImpute)
@@ -313,14 +315,20 @@ hljs.initHighlightingOnLoad();
 <pre><code>## [1] 15.09
 </code></pre>
 
-<p><strong>Do these values differ from the estimates from the first part of the assignment?</strong>
--Yes, these values differs from the first part.
-First,the histogram of imputed data has a distribution closer to normal distribution than the original data with NA removed.
-Second, the mean and medium values are the similar now. </p>
+<p><strong>Do these values differ from the estimates from the first part of the assignment?</strong></p>
 
-<p><strong>What is the impact of imputing missing data on the estimates of the total daily number of steps?</strong>
--Total daily steps increase 86129.51 by imputating the missing data.
-This represents a 15% increase of total daily steps.</p>
+<ul>
+<li>Yes, these values differs from the first part.
+First,the histogram of imputed data has a distribution closer to normal distribution than the original data with NA removed.
+Second, the mean and medium values are the similar now. </li>
+</ul>
+
+<p><strong>What is the impact of imputing missing data on the estimates of the total daily number of steps?</strong></p>
+
+<ul>
+<li>Total daily steps increase 86129.51 by imputating the missing data.
+This represents a 15% increase of total daily steps.</li>
+</ul>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
