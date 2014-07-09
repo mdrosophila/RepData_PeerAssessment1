@@ -112,3 +112,9 @@ This represents a 15% increase of total daily steps.
              type="l", xlab="interval",ylab="steps",main="weekend",
              col="blue",ylim=c(1,250))
 ```
+
+**yes, there is difference in activity patterns between weekdays and weekends. Activity is much less during the weekend morning and more during afternoon.**
+
+
+
+

@@ -179,3 +179,9 @@ This represents a 15% increase of total daily steps.
 ```
 
 ![plot of chunk DailyActivity2](figure/DailyActivity2.png) 
+
+**yes, there is difference in activity patterns between weekdays and weekends. Activity is much less during the weekend morning and more during afternoon.**
+
+
+
+
