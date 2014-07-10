@@ -73,7 +73,7 @@
 - Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
 ```r
-                sum(is.na(activity$steps)) 
+        sum(is.na(activity$steps)) 
 ```
 
 ```
@@ -162,21 +162,20 @@ This represents a 15% increase of total daily steps.
         if ((isWeekDay[i]=="Saturday")|(isWeekDay[i]=="Sunday"))
                 activity$weekday[i]<-"weekend"
                 else activity$weekday[i]<-"weekday"}
-        activity$weekday<-as.factor(activity$weekday)
+        activity$weekday<-factor(activity$weekday)
 ```
 
 - Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
         
 
 ```r
-        intervalSteps2<-tapply(activity$steps,list(activity$interval,activity$weekday),mean)
-        par(mfcol=c(2,1))
-        plot(as.numeric(names(intervalSteps)),intervalSteps2[,1],
-             type="l",xlab="interval",ylab="steps",main="weekday",
-             col="red",ylim=c(1,250))
-        plot(as.numeric(names(intervalSteps)),intervalSteps2[,2],
-             type="l", xlab="interval",ylab="steps",main="weekend",
-             col="blue",ylim=c(1,250))
+        library(reshape2);library(lattice)
+        activityMelt<-melt(activity,id.vars=c("interval","weekday"),
+                           measure.vars=c("steps"))
+        activityDcast<-dcast(activityMelt,interval+weekday~variable,mean)
+        activityDcast$weekday<-relevel(activityDcast$weekday,"weekend")
+        with(activityDcast,
+             xyplot(steps~interval|weekday,layout=c(1,2),type="l"))
 ```
 
 ![plot of chunk DailyActivity2](figure/DailyActivity2.png) 
